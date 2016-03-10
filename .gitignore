@@ -1,0 +1,6 @@
+/.project
+*.pyc
+winvenv/
+winvenv/
+food_order/local_settings.py
+/static
