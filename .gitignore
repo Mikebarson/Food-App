@@ -1,6 +1,4 @@
-/.project
 *.pyc
 winvenv/
 winvenv/
 settings/local_settings.py
-/static
