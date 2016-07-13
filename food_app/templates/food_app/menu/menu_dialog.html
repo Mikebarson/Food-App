@@ -1,0 +1,43 @@
+<md-dialog aria-label="Accounts" ng-cloak class="fullscreen-dialog"  style="min-height: 30%; min-width:40%;">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <span flex>{$ dialog_title $}</span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-font-library="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <!-- We should change this...we could do a carousel instead. Make it mobile friendly instead of tabs! -->
+    <md-dialog-content style="margin-right: 20px; margin-left:20px; margin-top: 50px; min-height: 90%; min-width:100%;">
+        <form name="userForm"></form>
+
+        <md-input-container class="md-block" flex-gt-sm  ng-init="search_instantiate()">
+           <label>Select Restaurant</label>
+           <md-select  aria-label="centercode" ng-init="read_all_restaurants()" md-on-close="clearSearchTerm('data','search')" ng-model="data.restaurant" ng-model-options="{ trackBy: '$value.id' }"
+           data-md-container-class="selectdemoSelectHeader">
+               <md-select-header class="demo-select-header">
+                   <input aria-label="search" ng-model="data.search" type="search" name="search" placeholder="Search" class="demo-header-searchbox _md-text">
+               </md-select-header>
+               <md-option ng-value="restaurant" ng-repeat="restaurant in restaurant_list | filter:data.search track by restaurant.id">{$ restaurant.name $}</md-option>
+           </md-select>
+        </md-input-container>
+
+        <md-input-container flex="flex" style="width:70%; margin-left: 20px;">
+          <label>Category Name</label>
+          <input type="text" ng-model="data.name"/>
+        </md-input-container>
+
+        <md-input-container flex="flex" style="width:70%; margin-left: 20px;">
+          <label>Category Description</label>
+          <input type="text" ng-model="data.description"/>
+        </md-input-container>
+
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+        <md-button class="md-primary md-raised" ng-click="add_menu_category(data)">Save</md-button>
+        <md-button class="md-primary md-raised" ng-click="cancel()">Cancel</md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

@@ -1,0 +1,42 @@
+{% extends "food_app/common/base.html" %}
+{% load staticfiles %}
+
+{% block js %}
+	<script type="text/javascript" src="{% static "js/food/food.js" %}"></script>
+{% endblock %}
+
+{% block ngapp %}food_app{% endblock %}
+{% block ngctrl%}food_controller{% endblock %}
+
+{% block content %}
+
+	<div ng-init="read_food()">
+		<div class="container">				
+		  <md-table-container>
+		    <table class="table" md-table md-row-select="options.rowSelection" ng-model="food_default_list" md-progress="promise" style="width:100%"> 
+		      <thead md-head md-order="query.order" md-on-reorder="logOrder">
+		        <tr md-row>
+		          <th md-column md-order-by="restaurant_name" style="width:20%;"><span>Restaurant Name</span></th>
+		          <th md-column md-order-by="food_name" style="width:20%;"><span>Food Code</span></th>
+		          <th md-column md-order-by="food_name" style="width:15%;"><span>Food Name</span></th>
+		          <th md-column md-order-by="food_type" style="width:15%;"><span>Food Type</span></th>
+		          <th md-column md-order-by="description" style="width:20%;"><span>Description</span></th>
+		          <th md-column md-order-by="price" style="width:10%;"><span>Price</span></th> 
+		        </tr>
+		      </thead>
+		      <tbody md-body>
+		        <tr md-row md-select="food" md-on-select="row_onclick" md-auto-select="options.autoSelect"  ng-repeat="food in food_list | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit" style="margin:0, 0, 0, 0">
+		            <td md-cell>{$ food.restaurant_name $}</td>
+		            <td md-cell>{$ food.food_code $}</td>
+		            <td md-cell>{$ food.food_name $}</td>
+		            <td md-cell>{$ food.food_type $}</td>
+		            <td md-cell>{$ food.description $}</td>
+		            <td md-cell>{$ food.price | currency$}</td>
+		        </tr>
+		      </tbody>
+		    </table>
+		  </md-table-container>
+		</div>
+	</div>
+
+{% endblock %}

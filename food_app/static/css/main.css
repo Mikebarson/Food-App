@@ -1,0 +1,339 @@
+.toolbardemoBasicUsage md-toolbar md-icon.md-default-theme {
+  color: white; }
+
+
+.whiteframe md-whiteframe {
+	background: #fff;
+	margin: 30px;
+	height: 500px;
+}
+
+.gridListdemoBasicUsage md-grid-list {
+  margin: 8px; }
+.gridListdemoBasicUsage .gray {
+  background: #f5f5f5; }
+.gridListdemoBasicUsage .green {
+  background: #b9f6ca; }
+.gridListdemoBasicUsage .yellow {
+  background: #ffff8d; }
+.gridListdemoBasicUsage .blue {
+  background: #84ffff; }
+.gridListdemoBasicUsage .purple {
+  background: #b388ff; }
+.gridListdemoBasicUsage .red {
+  background: #ff8a80; }
+.gridListdemoBasicUsage md-grid-tile {
+  transition: all 400ms ease-out 50ms; }
+
+/* Theme Colors */
+/*
+RED ---
+RGB: 255 - 73 - 37 Hex: FF4925
+
+Darker Red ---
+RGB: 225 - 43 - 7 Hex:E12B07
+
+Dark Green ---
+RGB: 0 - 148 - 90 Hex: 00945A
+
+Lime Green ---
+RGB:2 - 225 - 137 Hex: 02E189
+
+Yellow ---
+RGB: 225 - 219 - 56 Hex: E1DB38
+
+*/
+
+.fabSpeedDialdemoMoreOptions .md-fab-top-right {
+  top: 16px; }
+
+@media only screen and (max-device-width: 600px) {
+  .fabSpeedDialdemoMoreOptions .md-fab-top-right {
+    top: 9px;
+    right: 9px; } }
+
+.fabSpeedDialdemoMoreOptions .md-fab.demo-fab.trigger-fab:hover, .fabSpeedDialdemoMoreOptions .md-fab.demo-fab.trigger-fab.md-focused, .fabSpeedDialdemoMoreOptions .md-fab.demo-fab.action-fab:hover, .fabSpeedDialdemoMoreOptions .md-fab.demo-fab.action-fab.md-focused {
+  background-color: #333; }
+
+.fabSpeedDialdemoMoreOptions .md-fab.demo-fab.action-fab {
+  background-color: #aaa; }
+
+.fabSpeedDialdemoMoreOptions md-content div[flex="50"] {
+  padding: 15px; }
+
+.fabSpeedDialdemoMoreOptions md-fab-speed-dial {
+  margin-top: 89px; }
+  .fabSpeedDialdemoMoreOptions md-fab-speed-dial md-fab-trigger {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1); }
+  .fabSpeedDialdemoMoreOptions md-fab-speed-dial.md-scale.ng-hide-add.ng-hide-add-active, .fabSpeedDialdemoMoreOptions md-fab-speed-dial.md-fling.ng-hide-add.ng-hide-add-active {
+    display: flex !important; }
+  .fabSpeedDialdemoMoreOptions md-fab-speed-dial.md-scale.ng-hide md-fab-trigger, .fabSpeedDialdemoMoreOptions md-fab-speed-dial.md-fling.ng-hide md-fab-trigger {
+    transform: scale(0); }
+
+.fabSpeedDialdemoMoreOptions .intro {
+  padding-left: 5px; }
+
+.chipsdemoBasicUsage .errors {
+font-size: 12px;
+color: #dd2c00;
+margin-top: 10px; }
+
+.chipsdemoBasicUsage .custom-chips .md-chip {
+position: relative; }
+.chipsdemoBasicUsage .custom-chips .md-chip .md-chip-remove-container {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  margin-right: 0;
+  height: 24px; }
+  .chipsdemoBasicUsage .custom-chips .md-chip .md-chip-remove-container button.vegetablechip {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    line-height: 30px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    transition: background 0.15s linear;
+    display: block; }
+    .chipsdemoBasicUsage .custom-chips .md-chip .md-chip-remove-container button.vegetablechip md-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0) scale(0.7);
+      color: white;
+      fill: white; }
+    .chipsdemoBasicUsage .custom-chips .md-chip .md-chip-remove-container button.vegetablechip:hover, .chipsdemoBasicUsage .custom-chips .md-chip .md-chip-remove-container button.vegetablechip:focus {
+      background: rgba(255, 0, 0, 0.8); }
+.chipsdemoBasicUsage .custom-chips .md-chip:not(.md-readonly) md-chip-template {
+  padding-right: 5px; }
+
+/* Please note: All these selectors are only applied to children of elements with the 'selectdemoSelectHeader' class */ }
+.selectdemoSelectHeader .demo-header-searchbox {
+border: none;
+outline: none;
+height: 100%;
+width: 100%;
+padding: 0; }
+.selectdemoSelectHeader .demo-select-header {
+box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12);
+padding-left: 10.667px;
+height: 48px;
+cursor: pointer;
+position: relative;
+display: flex;
+align-items: center;
+width: auto; }
+.selectdemoSelectHeader md-content._md {
+max-height: 240px; }
+
+/* Button */
+
+.md_select_top_25{
+  margin-top: -25px !important;
+}
+
+.md_select_top_15{
+  margin-top: -15px !important;
+}
+
+.md_select_top_20{
+  margin-top: -20px !important;
+}
+
+.md_select_top_10{
+  margin-top: -10px !important;
+}
+
+.md_select_top_5{
+  margin-top: -5px !important;
+}
+
+.md_select_top_1{
+  margin-top: -1px !important;
+}
+
+.td_no_border_top{
+  border-top: none !important;
+}
+
+.smal_input_container{
+  margin:0px;
+}
+
+div[type="button"]:hover{
+  cursor: pointer;
+}
+
+.selectdemoSelectHeader .demo-header-searchbox {
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 100%;
+  padding: 0; 
+}
+.selectdemoSelectHeader .demo-select-header {
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12);
+  padding-left: 10.667px;
+  height: 35px !important;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: auto; 
+ }
+.selectdemoSelectHeader md-content._md {
+  max-height: 240px; 
+ }
+
+ md-option {
+  height: 35px !important;
+ }
+
+ md-option ._md-text {
+  font-size: 14px !important;
+ }
+
+.button {
+  display: inline-block;
+  position: relative;
+  width: 120px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 2px;
+  font-size: 0.9em;
+  background-color: #fff;
+  color: #646464;
+}
+
+.button > paper-ripple {
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.button.narrow {
+  width: 60px;
+}
+
+.button.grey {
+  background-color: #eee;
+}
+
+.button.blue {
+  background-color: #4285f4;
+  color: #fff;
+}
+
+.button.green {
+  background-color: #0f9d58;
+  color: #fff;
+}
+
+.button.green_sea {
+  background-color: #16a085;
+  color: #fff;
+}
+
+.button.red {
+  background-color: #d23f31;
+  color: #fff;
+}
+
+.button.yellow {
+  background-color: #f1c40f;
+  color: #fff;
+}
+
+.button.raised {
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0.2s;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.button.raised:active {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+  transition-delay: 0s;
+}
+
+.center{
+    text-align: center;
+}
+
+.button.small{
+  width :50px;
+}
+
+.button.extrasmall{
+  width :30px;
+}
+
+
+
+.lbl {
+  position: relative;
+  display: block;
+  height: 20px;
+  width: 44px;
+  background: #898989;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.lbl:after {
+  position: absolute;
+  left: -2px;
+  top: -3px;
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 100px;
+  background: #fff;
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.05);
+  content: '';
+  transition: all 0.3s ease;
+}
+.lbl:active:after {
+  transform: scale(1.15, 0.85);
+}
+.cbx:checked ~ label {
+  background: #6fbeb5;
+}
+.cbx:checked ~ label:after {
+  left: 20px;
+  background: #179588;
+}
+.cbx:disabled ~ label {
+  background: #d5d5d5;
+  pointer-events: none;
+}
+.cbx:disabled ~ label:after {
+  background: #bcbdbc;
+}
+.hidden {
+  display: none;
+}
+
+.margin_top {
+  margin-top: -20px !important;
+}
+
+.link_white{
+  color : white;
+}
+
+div.hover:hover{
+  cursor: pointer;
+}
+
+.filter_invoice_dialog .ngdialog-content {
+     background: transparent;
+     margin: 0 auto;
+     position: relative;
+     width: 25%;
+     padding-top: 150px;
+}

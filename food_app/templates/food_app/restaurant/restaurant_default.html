@@ -1,0 +1,55 @@
+{% extends "food_app/common/base.html" %}
+{% load staticfiles %}
+
+{% block js %}
+	<link   rel="stylesheet" src="{% static "css/restaurants.css" %}">
+	<script type="text/javascript" src="{% static "js/restaurant/restaurant.js" %}"></script>
+{% endblock %}
+
+{% block ngapp %}restaurant_app{% endblock %}
+{% block ngctrl%}restaurant_controller as ctrl{% endblock %}
+
+{% block content %}
+<div class="md-toolbar-tools">
+     <h3>
+       <span>Your Restaurants</span>
+     </h3>
+   </div>
+<md-fab-speed-dial ng-hide="demo.hidden" md-direction="left" md-open="demo.isOpen" class="md-scale md-fab-top-right" ng-class="{ 'md-hover-full': demo.hover }" ng-mouseenter="demo.isOpen=true" ng-mouseleave="demo.isOpen=false">
+	<md-fab-trigger>
+	    <md-button aria-label="menu" class="md-fab md-warn" ng-click="restaurant_dialog()">
+		    <md-tooltip md-direction="bottom" md-visible="tooltipVisible">Add Resutarant</md-tooltip>
+		    <md-icon md-font-library="material-icons">add</md-icon>
+	    </md-button>
+	</md-fab-trigger>
+</md-fab-speed-dial>
+
+<div ng-init="read_all_restaurants()" style="width:100%">
+
+
+	<md-content class="md-padding" layout-xs="column" layout="row">
+	   <div flex-xs="" flex-gt-xs="100" layout="column">
+	     <md-card ng-repeat="restaurant in restaurant_list">
+		   <md-card-title>
+	         <md-card-title-text>
+	           <span class="md-headline">{$ restaurant.name $}</span>
+	           <span class="md-subhead">Type of Restaurant: {$ restaurant.restaurant_type.name $}</span>
+	         </md-card-title-text>
+	       </md-card-title>
+	       <md-card-actions layout="row" layout-align="start center">
+	         <md-button ng-click="restaurant_dialog($event, restaurant)"><md-icon md-font-library="material-icons">edit</md-icon> Edit</md-button>
+	         <md-button><md-icon md-font-library="material-icons">delete</md-icon> Delete</md-button>
+	         <!-- <md-button ng-click="menu_dialog($event, restaurant)"><md-icon md-font-library="material-icons">list</md-icon>Menu Items</md-button> -->
+	       </md-card-actions>
+	       <md-card-content>
+	         <p>Who are We: {$ restaurant.details $}</p>
+	         <p>Open and Close: {$ restaurant.timings $}</p>
+	         <p>Our Social Media: {$ restaurant.social_media_sites $}</p>
+	         <p>Our Phone Number: {$ restaurant.phone_no $}</p>
+	       </md-card-content>
+	     </md-card>
+	   </div>
+	</md-content>
+
+</div>
+{% endblock %}

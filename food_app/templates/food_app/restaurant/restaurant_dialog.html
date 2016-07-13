@@ -1,0 +1,149 @@
+<md-dialog aria-label="Accounts" ng-cloak class="fullscreen-dialog"  style="min-height: 90%; min-width:70%;">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <span flex>Add Restaurant</span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-font-library="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+<!-- We should change this...we could do a carousel instead. Make it mobile friendly instead of tabs! -->
+    <md-dialog-content style="margin-right: 20px; margin-left:20px; margin-top: 20px; min-height: 70%; min-width:70%;">
+        <form name="userForm"></form>
+
+            <div>
+              <label><h4 class="section-title">Restaurant Name and Email</h4></label>
+              <md-divider></md-divider>
+            <br>
+               <md-input-container flex="flex" style="width:30%;">
+                 <label>Restaurant Name</label>
+                 <input type="text" ng-model="data.name"/>
+               </md-input-container>
+
+               <md-input-container flex="flex" style="width:30%;">
+                 <label>Restaurant's Email Address</label>
+                 <input type="email" ng-model="data.restaurant_email"/>
+               </md-input-container>
+
+               <md-input-container flex="flex" style="width:30%;">
+                 <label>Owner's Email Address</label>
+                 <input type="email" ng-model="data.user_email"/>
+               </md-input-container>
+            </div>
+        
+            <br>
+            
+            <div>
+              <label><h4 class="section-title">Restaurant Contact Details</h4></label>
+              <md-divider></md-divider>
+            <br>
+               <!-- Chip Select -->
+               <md-input-container flex="flex" style="width:30%;">
+                 <label>Social Media Sites</label>
+                 <input ng-model="data.social_media_sites"/>
+               </md-input-container>
+
+              <!-- We need to adjust the model as REGEX to filter Phone Numbers -->
+               <md-input-container flex="flex" style="width:30%;">
+                 <label>Phone Number</label>
+                 <input type="text" ng-model="data.phone_no"/>
+               </md-input-container>
+
+              <!-- Link to Website -->
+               <md-input-container flex="flex" style="width:30%;">
+                 <label>Restaurant's Website</label>
+                 <input ng-model="data.restaurant_website"/>
+               </md-input-container>
+            </div>
+
+            <br>
+
+            <div>
+              <label><h4 class="section-title">Restaurant Address Details</h4></label>
+              <md-divider></md-divider>
+            <br>
+               <!-- We can have this as a dropdown Country and City -->
+               <md-input-container flex="flex" style="width:30%">
+                 <label>Address</label>
+                 <input ng-model="data.address"/>
+               </md-input-container>
+
+               <md-input-container flex="flex" style="width:30%;">
+                 <label>Location</label>
+                 <input ng-model="data.location"/> 
+               </md-input-container>
+
+               <md-input-container flex="flex" style="width:30%;">
+                 <label>Pin Code</label>
+                 <input ng-model="data.pin_code"/>
+               </md-input-container>
+
+               <md-input-container flex="flex" style="width:30%;">
+                 <label>Landmark</label>
+                 <input ng-model="data.landmark"/>
+               </md-input-container>
+            </div>
+            
+            <br>
+
+             <div>
+               <label><h4 class="section-title">Other Restaurant Details</h4></label>
+               <md-divider></md-divider>
+            <br>
+               <!-- Dropdown with Choices - Open, Close, Under Renovation -->
+               <md-input-container flex="flex" style="width:100%;">
+                 <label>Opening Status</label>
+                 <input ng-model="data.opening_status"/>
+               </md-input-container>
+
+              <!-- Dropdown - Cafe, FastFood, Bistro, etc. -->
+               <md-input-container flex="flex" style="width:100%;">
+                  <md-select  aria-label="centercode" ng-init="get_restaurant_types()" md-on-close="clearSearchTerm('data','search')" ng-model="data.restaurant_type" ng-model-options="{ trackBy: '$value.id' }"
+                  data-md-container-class="selectdemoSelectHeader">
+                      <md-select-header class="demo-select-header">
+                          <input aria-label="search" ng-model="data.search" type="search" name="search" placeholder="Restaurant Type" class="demo-header-searchbox _md-text">
+                      </md-select-header>
+                      <md-option ng-value="type" ng-repeat="type in restaurant_types | filter:data.search track by type.id">{$ type.name $}</md-option>
+                  </md-select>
+               </md-input-container>
+
+                <h4>Tags</h4>
+                <md-chips ng-model="tag_list"></md-chips>
+
+                <!-- Create a different database for Cuisines -->
+                <h4>Cuisines</h4>
+                <md-chips ng-model="cuisine_list"></md-chips>
+
+                <!-- Chips design -->
+                <h4>Features</h4>
+                <md-chips ng-model="feature_list"></md-chips>
+
+                <!-- Time design -->
+                 <md-input-container flex="flex" style="width:100%;">
+                   <label>Timings</label>
+                   <input ng-model="data.timings"/>
+                 </md-input-container>
+
+               
+                 <!-- Customer Review - connect with Customer database -->
+                 <md-input-container flex="flex" style="width:100%;">
+                   <label>Review</label>
+                   <textarea ng-model="data.review" columns="1" md-maxlength="150"></textarea>
+                 </md-input-container>
+
+                  <!-- Details -->
+                  <md-input-container flex="flex" style="width:100%;">
+                   <label>About the Restaurant</label>
+                   <textarea ng-model="data.details" columns="1" md-maxlength="150"></textarea>
+                 </md-input-container>
+             </div>
+
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+        <md-button class="md-primary md-raised" ng-click="add_restaurant(data)">Save</md-button>
+        <md-button class="md-primary md-raised" ng-click="cancel()">Cancel</md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

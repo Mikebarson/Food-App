@@ -1,0 +1,56 @@
+{% extends "food_app/common/base.html" %}
+{% load staticfiles %}
+
+{% block js %}
+	<link   rel="stylesheet" src="{% static "css/menu.css" %}">
+	<script type="text/javascript" src="{% static "js/menu/menu.js" %}"></script>
+{% endblock %}
+
+{% block ngapp %}restaurant_app{% endblock %}
+{% block ngctrl%}restaurant_controller as ctrl{% endblock %}
+
+{% block content %}
+<md-fab-speed-dial ng-hide="demo.hidden" md-direction="left" md-open="demo.isOpen" class="md-scale md-fab-top-right" ng-class="{ 'md-hover-full': demo.hover }" ng-mouseenter="demo.isOpen=true" ng-mouseleave="demo.isOpen=false">
+	<md-fab-trigger>
+	    <md-button aria-label="menu" class="md-fab md-warn" ng-click="add_menu_category_dialog($event)">
+		    <md-tooltip md-direction="bottom" md-visible="tooltipVisible">Add Menu Category</md-tooltip>
+		    <md-icon md-font-library="material-icons">add</md-icon>
+	    </md-button>
+	</md-fab-trigger>
+</md-fab-speed-dial>
+
+<div style="width:100%">
+  <div style="margin-left:5%;" flex-xs="" flex-gt-xs="70" layout="row">
+
+    <md-input-container  class="md-block" flex-gt-sm  ng-init="search_instantiate()">
+       <label>Select Restaurant</label>
+       <md-select  aria-label="centercode" ng-init="read_all_restaurants()" ng-change="read_all_menu_categories(data.restaurant)" md-on-close="clearSearchTerm('data','search')" ng-model="data.restaurant" ng-model-options="{ trackBy: '$value.id' }"
+       data-md-container-class="selectdemoSelectHeader">
+           <md-select-header class="demo-select-header">
+               <input aria-label="search" ng-model="data.search" type="search" name="search" placeholder="Search" class="demo-header-searchbox _md-text">
+           </md-select-header>
+           <md-option ng-value="restaurant" ng-repeat="restaurant in restaurant_list | filter:data.search track by restaurant.id">{$ restaurant.name $}</md-option>
+       </md-select>
+    </md-input-container>
+  </div>
+
+	<md-content class="md-padding" layout-xs="column" layout="row">
+	   <div flex-xs="" flex-gt-xs="100" layout="column">
+        <h2>Your Menus</h2>
+           <md-card ng-repeat="category in menu_categories">
+           <md-card-title>
+               <md-card-title-text>
+                 <span class="md-headline">{$ category.name $}</span>
+                 <span class="md-subhead">{$ category.description $}</span>
+               </md-card-title-text>
+             </md-card-title>
+             <md-card-actions layout="row" layout-align="start center">
+               <md-button ng-click="read_menu_category(category)"><md-icon md-font-library="material-icons">edit</md-icon> Edit</md-button>
+               <md-button ng-click="delete_menu_category(category)"><md-icon md-font-library="material-icons">delete</md-icon> Delete</md-button>
+             </md-card-actions>
+           </md-card>
+	   </div>
+	 </md-content>
+
+</div>
+{% endblock %}

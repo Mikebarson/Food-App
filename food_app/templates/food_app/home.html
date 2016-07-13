@@ -1,0 +1,15 @@
+{% extends "food_app/common/base.html" %}
+{% load staticfiles %}
+
+{% block js %}
+	<script type="text/javascript" src="{% static "js/home.js" %}"></script>
+{% endblock %}
+
+{% block ngapp %}home_app{% endblock %}
+{% block ngctrl%}home_controller{% endblock %}
+
+{% block content %}
+		
+Welcome To Home!
+
+{% endblock %}

@@ -1,0 +1,100 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Food Court</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- CSS -->
+	<link rel="stylesheet" href="{% static "lib/css/material-fonts.css"%}" >
+	<link rel="stylesheet" href="{% static "css/main.css"%}">
+	<link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}">
+	<link rel="stylesheet" href="{% static "lib/css/ngDialog.css"%}">
+	<link rel="stylesheet" href="{% static "lib/css/md-data-table.css"%}">
+	<link rel="stylesheet" href="{% static "lib/css/angular-material.min.css"%}">
+	<link rel="stylesheet" href="{% static "lib/css/angular-material.css"%}">
+	<link rel="stylesheet" href="{% static "lib/css/angular-ui-notification.min.css"%}">
+	<link rel="stylesheet" href="{% static "lib/css/docs.css"%}">
+	<link rel="stylesheet" href="{% static "lib/css/bootstrap.min.css"%}">
+	<!-- jquery -->
+	<script type="text/javascript" src="{% static "lib/js/jquery.js" %}"></script>
+	<!-- Bootstrap -->
+	<script type="text/javascript" src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "bootstrap/js/bootstrap.js" %}"></script>
+	<!-- Angular -->
+	<script type="text/javascript" src="{% static "lib/js/angular.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "lib/js/ngDialog.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "lib/js/angular-animate.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "lib/js/angular-aria.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "lib/js/angular-messages.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "lib/js/angular-material.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "lib/js/angular-route.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "lib/js/svg-assets-cache.js" %}"></script>
+	<script type="text/javascript" src="{% static "lib/js/angular-ui-notification.min.js" %}"></script>
+	<script data-require="angular-ui-bootstrap@*" src="{% static "lib/js/angular-ui-bootstrap.min.js" %}"></script>
+
+	<!-- Common Services -->
+	<script type="text/javascript" src="{% static "js/main-services.js" %}"></script>
+	<!-- MD Stuff -->
+	<!-- <script type="text/javascript" src="{% static "lib/js/md-data-table.min.js" %}"></script> -->
+	<script type="text/javascript" src="{% static "lib/js/md-data-table.js" %}"></script>
+
+
+	{% block js %}
+	{% endblock js %}
+
+</head>
+
+<body  ng-app={% block ngapp %} {% endblock %} ng-controller={% block ngctrl%} {% endblock %}>
+		<div ng-cloak="" class="toolbardemoBasicUsage">
+		  <md-content>
+		    <md-toolbar style="background-color: #FF4925">
+		      <div class="md-toolbar-tools">
+		        <md-button class="md-icon-button" aria-label="Settings" ng-click="openLeftMenu()">
+		          <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+		        </md-button>
+		        <h2>
+		          <span><a href="/home/">FOOD COURT</a></span>
+		        </h2>
+		        <span flex=""></span>
+		      </div>
+		    </md-toolbar>
+		</div>
+		 <div layout="row">
+	        <md-sidenav md-component-id="left" md-is-open="isSidenavOpen" class="md-sidenav-left">
+	        	<md-toolbar class="md-theme-indigo">
+	               <h1 class="md-toolbar-tools">Navigate</h1>
+	            </md-toolbar>
+	            <md-content layout-padding>
+	            	<md-button href="/"  class="md-primary"><md-icon md-font-library="material-icons">home</md-icon> Home</md-button>
+	            	<br>
+	            	<md-button class="md-primary"><md-icon md-font-library="material-icons">power_settings_new</md-icon> Login</md-button>
+	            	<br>
+	            	<md-button class="md-primary"><md-icon md-font-library="material-icons">power_settings_new</md-icon> Explore</md-button>
+	            	<br>
+	            	<md-button class="md-primary"><md-icon md-font-library="material-icons">account_circle</md-icon> Sign Up</md-button>
+	            	<br>
+	            	<md-button class="md-primary"><md-icon md-font-library="material-icons">settings</md-icon> Settings</md-button>
+		    	</md-content>
+		    	<md-divider></md-divider>
+
+<!-- Add Filter for User or Restaurant Owner -->
+				<!-- For Owner -->
+		    	<md-content layout-padding>
+	            	<!-- <md-button href="/restaurants/" class="md-primary"><md-icon md-font-library="material-icons">restaurant_menu</md-icon> Restaurants</md-button>
+	            	<br> -->
+	            	<md-button href="/restaurants/" class="md-primary"><md-icon md-font-library="material-icons">restaurant_menu</md-icon> Your Restaurants</md-button>
+	            	<br>
+	            	<md-button href="/menus/" class="md-primary"><md-icon md-font-library="material-icons">restaurant_menu</md-icon> Your Menus</md-button>
+	            	<br>
+	            	<md-button href="/menus/" class="md-primary"><md-icon md-font-library="material-icons">cake</md-icon> Your Foods</md-button>
+	            	<br>
+		    	</md-content>
+	        </md-sidenav>
+	    </div>
+
+		{% block content %}
+
+	  	{% endblock %}
+
+</body>
+</html>

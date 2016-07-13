@@ -71,7 +71,6 @@ WSGI_APPLICATION = 'settings.wsgi.application'
 
 try:
     from .local_settings import * 
-    print("Running on Local_Host settings...")
     DEBUG = True
 
 except ImportError:
@@ -102,7 +101,7 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
-
+    
 USE_L10N = True
 
 USE_TZ = True
@@ -115,4 +114,4 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/static/uploads/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'food_app/static/uploads')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'food_app/static/media')
